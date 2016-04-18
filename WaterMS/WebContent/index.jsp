@@ -18,7 +18,7 @@
 		<frame src="./left.html" name="left" noresize="noresize"
 			frameborder="0" scrolling="no" marginwidth="0" marginheight="0" />
 		<!--主体右部分-->
-		<!--<frame src="./main.html" name="main" frameborder="0" scrolling="auto" marginwidth="0" marginheight="0" />-->
+		<frame src="" name="main" frameborder="0" scrolling="auto" marginwidth="0" marginheight="0" />
 	</frameset>
 </frameset>
 </html>
