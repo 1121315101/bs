@@ -1,21 +1,23 @@
 package entity;
 
 public class DocType {
-	String type_id, type_cont;
+	int id;
+	String cont;
 
-	public String getType_id() {
-		return type_id;
+	public int getId() {
+		return id;
 	}
 
-	public void setType_id(String type_id) {
-		this.type_id = type_id;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getType_cont() {
-		return type_cont;
+	public String getCont() {
+		return cont;
 	}
 
-	public void setType_cont(String type_cont) {
-		this.type_cont = type_cont;
+	public void setCont(String cont) {
+		this.cont = cont;
 	}
+
 }
