@@ -1,14 +1,13 @@
 package entity;
 
 public class DocType {
-	int id;
-	String cont;
+	String id, cont;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
