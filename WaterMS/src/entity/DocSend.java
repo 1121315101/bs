@@ -1,6 +1,11 @@
 package entity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class DocSend {
+	public static String nameSend[] = { "id", "title", "cont", "secret", "type", "urgency", "datetime", "drafter",
+			"sector", "checker", "state" };
 	String id, title, cont, secret, type, urgency, datetime, drafter, sector, checker, state;
 
 	public DocSend(String id, String title, String cont, String secret, String type, String urgency, String datetime,
@@ -17,6 +22,9 @@ public class DocSend {
 		this.secret = secret;
 		this.checker = checker;
 		this.state = state;
+	}
+
+	public DocSend() {
 	}
 
 	public String getId() {
@@ -105,5 +113,26 @@ public class DocSend {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public JSONObject toJSON() {
+		JSONObject jsonObject = new JSONObject();
+		int i = 0;
+		try {
+			jsonObject.put(nameSend[i++], this.getId());
+			jsonObject.put(nameSend[i++], this.getTitle());
+			jsonObject.put(nameSend[i++], this.getCont());
+			jsonObject.put(nameSend[i++], this.getSecret());
+			jsonObject.put(nameSend[i++], this.getType());
+			jsonObject.put(nameSend[i++], this.getUrgency());
+			jsonObject.put(nameSend[i++], this.getDatetime());
+			jsonObject.put(nameSend[i++], this.getDrafter());
+			jsonObject.put(nameSend[i++], this.getSector());
+			jsonObject.put(nameSend[i++], this.getChecker());
+			jsonObject.put(nameSend[i++], this.getState());
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return jsonObject;
 	}
 }
