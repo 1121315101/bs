@@ -12,6 +12,7 @@ import entity.DocType;
 public class DocTypeImpl {
 	/**
 	 * 获取所有的记录
+	 * 
 	 * @return
 	 */
 	public List<DocType> fetchAll() {
@@ -22,8 +23,8 @@ public class DocTypeImpl {
 		try {
 			while (rs.next()) {
 				DocType docType = new DocType();
-				docType.setType_id(rs.getString("type_id"));
-				docType.setType_cont(rs.getString("type_cont"));
+				docType.setId(rs.getString("type_id"));
+				docType.setCont(rs.getString("type_cont"));
 				list.add(docType);
 			}
 		} catch (SQLException e) {
