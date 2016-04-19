@@ -1,14 +1,17 @@
 package entity;
 
+import java.util.Date;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class DocSend {
-	public static String nameSend[] = { "id", "title", "cont", "secret", "type", "urgency", "datetime", "drafter",
+	public static String nameSend[] = { "id", "title", "cont", "secret", "type", "urgency", "draftTime", "drafter",
 			"sector", "checker", "state" };
-	String id, title, cont, secret, type, urgency, datetime, drafter, sector, checker, state;
+	String id, title, cont, secret, type, urgency, drafter, sector, checker, state;
+	Date draftTime;
 
-	public DocSend(String id, String title, String cont, String secret, String type, String urgency, String datetime,
+	public DocSend(String id, String title, String cont, String secret, String type, String urgency, Date draftTime,
 			String drafter, String sector, String checker, String state) {
 		this.id = id;
 		this.title = title;
@@ -16,7 +19,7 @@ public class DocSend {
 		this.secret = secret;
 		this.type = type;
 		this.urgency = urgency;
-		this.datetime = datetime;
+		this.draftTime = draftTime;
 		this.drafter = drafter;
 		this.sector = sector;
 		this.secret = secret;
@@ -75,12 +78,14 @@ public class DocSend {
 		this.urgency = urgency;
 	}
 
-	public String getDatetime() {
-		return datetime;
+	public Date getDraftTime() {
+		return draftTime;
 	}
 
-	public void setDatetime(String datetime) {
-		this.datetime = datetime;
+	public void setDraftTime(long draftTime) {
+		Date time = new Date();
+		time.setTime(draftTime);
+		this.draftTime = time;
 	}
 
 	public String getDrafter() {
@@ -125,7 +130,7 @@ public class DocSend {
 			jsonObject.put(nameSend[i++], this.getSecret());
 			jsonObject.put(nameSend[i++], this.getType());
 			jsonObject.put(nameSend[i++], this.getUrgency());
-			jsonObject.put(nameSend[i++], this.getDatetime());
+			jsonObject.put(nameSend[i++], this.getDraftTime());
 			jsonObject.put(nameSend[i++], this.getDrafter());
 			jsonObject.put(nameSend[i++], this.getSector());
 			jsonObject.put(nameSend[i++], this.getChecker());
