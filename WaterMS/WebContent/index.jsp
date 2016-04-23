@@ -10,12 +10,12 @@
 </head>
 <frameset rows="64,*" frameborder="no" border="0" framespacing="0">
 	<!--头部-->
-	<frame src="./top.html" name="top" noresize="noresize" frameborder="0"
+	<frame src="/top.html" name="top" noresize="noresize" frameborder="0"
 		scrolling="no" marginwidth="0" marginheight="0" />
 	<!--主体部分-->
 	<frameset cols="185,*">
 		<!--主体左部分-->
-		<frame src="./left.html" name="left" noresize="noresize"
+		<frame src="/left.html" name="left" noresize="noresize"
 			frameborder="0" scrolling="no" marginwidth="0" marginheight="0" />
 		<!--主体右部分-->
 		<frame src="" name="main" frameborder="0" scrolling="auto" marginwidth="0" marginheight="0" />
