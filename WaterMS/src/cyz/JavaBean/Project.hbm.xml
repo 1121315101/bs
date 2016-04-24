@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-21 9:43:04 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cyz.JavaBean.Project" table="PROJECT">
+        <id name="projectID" type="java.lang.String" > 
+            <column name="PROJECTID"  />
+            <generator class="uuid" />
+        </id>
+        <property name="projectName" type="java.lang.String">
+            <column name="PROJECTNAME" />
+        </property>
+        <property name="customerID" type="java.lang.String">
+            <column name="CUSTOMERID" />
+        </property>
+        <property name="buildProjectDate" type="java.util.Date">
+            <column name="BUILDPROJECTDATE" />
+        </property>
+        <property name="projectCost" type="java.math.BigDecimal">
+            <column name="PROJECTCOST" />
+        </property>
+        <property name="esTotalRevenue" type="java.math.BigDecimal">
+            <column name="ESTOTALREVENUE" />
+        </property>
+        <property name="startDate" type="java.util.Date">
+            <column name="STARTDATE" />
+        </property>
+        <property name="endDate" type="java.util.Date">
+            <column name="ENDDATE" />
+        </property>
+        <property name="projectDescription" type="java.lang.String">
+            <column name="PROJECTDESCRIPTION" />
+        </property>
+        <property name="projectRiskDes" type="java.lang.String">
+            <column name="PROJECTRISKDES" />
+        </property>
+        <property name="estprojectImpDays" type="java.lang.Integer">
+            <column name="ESTPROJECTIMPDAYS" />
+        </property>
+        <property name="projectTypeID" type="java.lang.String">
+            <column name="PROJECTTYPEID" />
+        </property>
+        <property name="projectStateID" type="java.lang.String">
+            <column name="PROJECTSTATEID" />
+        </property>
+        <property name="projectImpID" type="java.lang.String">
+            <column name="PROJECTIMPID" />
+        </property>
+        <property name="projectUrl" type="java.lang.String">
+            <column name="PROJECTURL" />
+        </property>
+        <property name="contractID" type="java.lang.String">
+            <column name="CONTRACTID" />
+        </property>
+        <property name="agreementID" type="java.lang.String">
+            <column name="AGREEMENTID" />
+        </property>
+       <!--  <one-to-one name="hr" cascade="all"/> -->
+
+    </class>
+</hibernate-mapping>
