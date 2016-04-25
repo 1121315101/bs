@@ -9,11 +9,16 @@ import java.util.List;
 import java.util.Map;
 
 import cyz.JavaBean.Agreement;
+import cyz.JavaBean.Check;
 import cyz.JavaBean.Contract;
+import cyz.JavaBean.Cost;
 import cyz.JavaBean.HR;
+import cyz.JavaBean.MaterialBuy;
+import cyz.JavaBean.MonthReport;
 import cyz.JavaBean.Project;
 import cyz.JavaBean.ProjectDatils;
 import cyz.clas.ConnectDB;
+import javassist.compiler.ast.Symbol;
 
 public class FactoryImp {
 	static Connection con=ConnectDB.conncectionDB();
@@ -150,4 +155,68 @@ public class FactoryImp {
 		}
 		return hr;
 	}
+	public static List<MonthReport> getMonReport(String projectid){
+		List<MonthReport> list=new ArrayList<MonthReport>();
+		String sql="select * from monthreport  where projectID='"+projectid+"'";
+		ResultSet rs=ConnectDB.getResultSet(con, sql);
+		try{
+			while(rs.next()){
+				MonthReport	monreport=new MonthReport(rs.getString(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6),rs.getString(7),rs.getString(8));
+				list.add(monreport);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public static MaterialBuy getMaterialbuy(String projectid){
+		MaterialBuy materialbuy=null;
+		String sql="select * from materialbuy  where projectID='"+projectid+"'";
+		System.out.println(sql);
+		ResultSet rs=ConnectDB.getResultSet(con, sql);
+		try{
+			while(rs.next()){
+				materialbuy=new MaterialBuy(rs.getString(1), rs.getString(2),rs.getString(3),
+						rs.getString(4),rs.getString(5),rs.getDate(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return materialbuy;
+	}
+	public static Check getCheck(String projectid){
+		Check check=null;
+		String sql="select * from check  where projectID='"+projectid+"'";
+		System.out.println(sql);
+		ResultSet rs=ConnectDB.getResultSet(con, sql);
+		try{
+			while(rs.next()){
+				check=new Check(rs.getString(1), rs.getString(2),rs.getString(3),
+						rs.getDate(4),rs.getDate(5),rs.getString(6),rs.getString(7),rs.getString(8));
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		System.out.println("=========================");
+		return check;
+	}
+
+
+public static List<Cost> getCost(String projectid){
+	List<Cost> list=new ArrayList<Cost>();
+	String sql="select * from cost  where projectID='"+projectid+"'";
+	System.out.println(sql);
+	ResultSet rs=ConnectDB.getResultSet(con, sql);
+	try{
+		while(rs.next()){
+		Cost	cost=new Cost(rs.getString(1), rs.getString(2),rs.getBigDecimal(3),
+					rs.getString(4),rs.getString(6),rs.getDate(7),rs.getString(8),rs.getString(9),rs.getString(10));
+			list.add(cost);
+		}
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return list;
+}
 }

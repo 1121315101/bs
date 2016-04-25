@@ -16,7 +16,7 @@
 			</div>
 				<table class="ptable">
 				<tr>
-					<td>协议编号&nbsp;&nbsp;<input type="text" name=""  value=<%=agree.getAgreementID()%>  disabled="disabled" class="pscinput"></td>
+					<td>项目名称&nbsp;&nbsp;<input type="text" name=""  value=<%=session.getAttribute("projectname")%>  disabled="disabled" class="pscinput"></td>
 					<td>协议状态&nbsp;&nbsp;<select disabled="disabled" name="">
 									<option selected=<%=agree.getAgreeState().equals("审核中")?"selected":"" %> >审核中</option>
 									<option selected=<%=agree.getAgreeState().equals("完成")?"selected":"" %>>完成</option>
@@ -59,8 +59,8 @@
 			</div>
 				<table class="ptable">
 				<tr>
-					<td>协议编号&nbsp;&nbsp;<input type="text" name=""  class="pscinput"></td>
-					<td>协议状态&nbsp;&nbsp;<select disabled name="">
+					<td>项目名称&nbsp;&nbsp;<input type="text" name=""  class="pscinput"></td>
+					<td>协议状态&nbsp;&nbsp;<select  name="">
 									<option selected="selected" >审核中</option>
 									<option >完成</option>
 									</select ></td>

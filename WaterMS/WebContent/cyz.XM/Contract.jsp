@@ -18,7 +18,7 @@
 			</div>
 				<table class="ptable">
 				<tr>
-					<td>合同编号&nbsp;&nbsp;<input type="text" name=""  value=<%=contract.getContractID()%>  disabled="disabled" class="pscinput"></td>
+					<td>项目名称&nbsp;&nbsp;<input type="text" name=""  value=<%=session.getAttribute("projectname")%>  disabled="disabled" class="pscinput"></td>
 					<td>合同状态&nbsp;&nbsp;<select disabled="disabled" name="">
 									<option selected=<%=contract.getContractState().equals("审核中")?"selected":"" %> >审核中</option>
 									<option selected=<%=contract.getContractState().equals("完成")?"selected":"" %>>完成</option>
@@ -52,7 +52,7 @@
 			</div>
 				<table class="ptable">
 				<tr>
-					<td>合同编号&nbsp;&nbsp;<input type="text" name="" class="pscinput"></td>
+					<td>项目名称&nbsp;&nbsp;<input type="text" name="" class="pscinput"></td>
 					<td>合同状态&nbsp;&nbsp;<select  name="">
 									<option>待审中</option>
 									<option>完成</option>

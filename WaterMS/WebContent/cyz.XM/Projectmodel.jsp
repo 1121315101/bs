@@ -40,6 +40,16 @@
 			success: function(msg){ $("#main").html(msg);} 
 		}); 
 	}
+	function quitdatils(){
+		$.ajax({ 
+			url:'../project', 
+			type:'get', 
+			dataType:'html',
+			data:{quitstr:quitstr},
+			error: function(){ alert('Error loading document'); }, 
+			success: function(msg){ $("#main").html(msg);} 
+		}); 
+	}
 </script>
 <body>
 	<div id="qian" >
@@ -47,7 +57,7 @@
 		<span>位置：</span>
 		<ul class="placeul">
 			<li><a href="#">首页</a></li>
-			<li><a href="#">项目申报</a></li>
+			<li><a href="#" onclick="quitdatils()">项目申报</a></li>
 		</ul>
 	</div>
 
@@ -68,7 +78,7 @@
 				<label>项目状态：</label>
 				<input name="checksure" type="radio" value=""  checked="checked" onclick="sub('0','1')"/>&nbsp;进行中&nbsp;&nbsp;
 				<input name="checksure" type="radio" value=""  onclick="sub('1','1')"/>&nbsp;待审&nbsp;&nbsp;
-				<input name="checksure" type="radio" value=""  onclick="sub('2','1')"/>&nbsp;全部
+				<input name="checksure" type="radio" value=""  onclick="sub('2','1')"/>&nbsp;完成
 			</li>
 			<li>
 			<label>查询：</label>
